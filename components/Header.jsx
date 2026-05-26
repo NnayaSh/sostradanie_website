@@ -20,8 +20,8 @@ const Header = ({ activePage = 'home', onNav }) => {
     { id: 'home', label: 'Главная' },
     { id: 'animals', label: 'Питомцы' },
     { id: 'help', label: 'Как помочь' },
-    { id: 'stories', label: 'Истории' },
-    { id: 'life', label: 'Жизнь приюта' },
+    { id: 'stories', label: 'Жизнь приюта' },
+    { id: 'life', label: 'Истории' },
     { id: 'about', label: 'Новости' },
   ];
 
