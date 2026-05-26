@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сострадание — фонд помощи животным</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: #fdf8f5;
+    font-family: 'Patefon', Georgia, serif;
+    color: #261510;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a { text-decoration: none; }
+  button { cursor: pointer; font-family: inherit; }
+  ::selection { background: #ff2a00; color: white; }
+
+  /* Modal: collapse to single column on form/sent */
+  .modal-form-mode { grid-template-columns: 1fr !important; max-width: 640px !important; }
+
+  @media (max-width: 980px) and (min-width: 761px) {
+    .hero-grid { grid-template-columns: 1fr !important; }
+  }
+  @media (max-width: 980px) {
+    .stories-grid { grid-template-columns: 1fr !important; }
+    .nl-grid { grid-template-columns: 1fr !important; }
+    .footer-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+    .faq-head { grid-template-columns: 1fr !important; }
+    .faq-illo { display: none !important; }
+  }
+  @media (max-width: 760px) {
+    .animals-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .tier-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .help-grid { grid-template-columns: 1fr !important; }
+    .footer-cols { grid-template-columns: repeat(2, 1fr) !important; }
+  }
+  @media (max-width: 520px) {
+    .animals-grid { grid-template-columns: 1fr !important; }
+    .tier-grid { grid-template-columns: 1fr !important; }
+    .footer-cols { grid-template-columns: 1fr !important; }
+  }
+
+  /* ───────── Mobile (≤760px) ───────── */
+  @media (max-width: 760px) {
+    /* Header */
+    .header-inner { padding: 0 20px !important; height: 64px !important; gap: 16px !important; }
+
+    /* Hero — single column: heading on top, illustration below */
+    [id="home"] { display: block; }
+    [id="home"] > div[aria-hidden="true"] { /* blob */
+      right: -40% !important;
+      top: -10% !important;
+      width: 480px !important;
+      height: 480px !important;
+    }
+    .hero-grid {
+      grid-template-columns: 1fr !important;
+      padding: 16px 20px 32px !important;
+      gap: 8px !important;
+      align-items: stretch !important;
+      width: 100%;
+    }
+    .hero-grid h1 {
+      font-size: clamp(64px, 18vw, 92px) !important;
+      line-height: 0.92 !important;
+      margin-bottom: 16px !important;
+    }
+    .hero-grid p {
+      font-size: 16px !important;
+      line-height: 1.5 !important;
+      margin-bottom: 22px !important;
+      max-width: none !important;
+    }
+    .hero-grid > div:first-of-type > div:nth-child(1) { /* eyebrow */
+      font-size: 12px !important;
+      padding: 6px 12px !important;
+      margin-bottom: 18px !important;
+    }
+    .hero-grid > div:first-of-type > div:nth-of-type(2) { /* actions */
+      gap: 10px !important;
+      margin-bottom: 0 !important;
+    }
+    .hero-grid > div:first-of-type > div:nth-of-type(2) button {
+      font-size: 15px !important;
+      padding: 13px 22px !important;
+      flex: 1 1 auto;
+    }
+    .hero-grid > div:first-of-type > div:last-child { /* stats */
+      display: flex !important;
+      gap: 18px !important;
+      padding-top: 28px !important;
+      margin-top: 4px !important;
+      flex-wrap: wrap !important;
+      border-top: 1px solid rgba(38,21,16,0.08) !important;
+    }
+    .hero-grid > div:first-of-type > div:last-child > div { flex: 1 1 28%; min-width: 90px; }
+    .hero-grid > div:first-of-type > div:last-child span:first-child { font-size: 30px !important; }
+    .hero-grid > div:first-of-type > div:last-child span:last-child { font-size: 12px !important; width: auto !important; }
+
+    /* Hero image side — now below text, full width */
+    .hero-grid > div:last-child {
+      height: auto !important;
+      min-height: 0 !important;
+      align-items: center !important;
+      justify-content: center !important;
+      margin-top: 12px !important;
+    }
+    .hero-grid > div:last-child img:first-of-type {
+      max-width: 100% !important;
+      width: 100% !important;
+      height: auto !important;
+      max-height: 56vh !important;
+      object-fit: contain !important;
+    }
+    .hero-grid > div:last-child img:nth-of-type(2) { /* float cat */
+      display: none !important;
+    }
+    .hero-grid > div:last-child > div:last-child { /* tag */
+      display: none !important;
+    }
+
+    /* Generic section paddings + headings */
+    section { padding-left: 20px !important; padding-right: 20px !important; }
+    section h2 { font-size: 44px !important; line-height: 0.98 !important; }
+
+    /* Animals */
+    .animals-grid + div { /* bottomNote */
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      padding: 20px !important;
+      gap: 14px !important;
+    }
+    .animals-grid + div button { margin-left: 0 !important; width: 100%; }
+
+    /* Donate section */
+    [id="help"] > div > div:nth-of-type(3) { /* commit row */
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+      padding: 20px !important;
+    }
+    [id="help"] > div > div:nth-of-type(3) > div:first-child { /* amountBox */
+      border-right: none !important;
+      border-bottom: 1px solid #e8ddd6 !important;
+      padding-right: 0 !important;
+      padding-bottom: 16px !important;
+    }
+    [id="help"] > div > div:nth-of-type(3) button { width: 100%; justify-content: center; }
+
+    /* HowToHelp */
+    .help-grid > div { grid-column: span 1 !important; min-height: 240px !important; padding: 24px !important; }
+    .help-grid > div > div:first-child > div:nth-child(2) { font-size: 36px !important; }
+    .help-grid img { width: 140px !important; }
+
+    /* Stories */
+    [id="stories"] .stories-grid { min-height: 0 !important; }
+    [id="stories"] .stories-grid > div:first-child img { min-height: 240px !important; height: 240px !important; }
+    [id="stories"] .stories-grid > div:last-child { padding: 32px 24px 28px !important; }
+    [id="stories"] .stories-grid p { font-size: 19px !important; margin-bottom: 20px !important; }
+
+    /* Marquee — slimmer on mobile */
+    [style*="сostr-marquee"] { padding: 10px 0 !important; gap: 18px !important; }
+    [style*="сostr-marquee"] span { font-size: 18px !important; }
+    [style*="сostr-marquee"] img { width: 18px !important; height: 12px !important; }
+
+    /* Newsletter */
+    .nl-grid { gap: 24px !important; }
+    .nl-grid h2 { font-size: 48px !important; }
+    .nl-grid img { max-width: 220px !important; }
+    .nl-grid form { flex-direction: column !important; background: white !important; padding: 8px !important; border-radius: 16px !important; }
+    .nl-grid form input { padding: 12px 14px !important; }
+    .nl-grid form button { width: 100%; padding: 14px !important; }
+
+    /* Footer */
+    .footer-grid { padding: 0 20px 48px !important; gap: 32px !important; }
+
+    /* FAQ */
+    [id="faq"] h2 { font-size: 56px !important; }
+    .faq-qbtn { padding: 22px 20px !important; gap: 14px !important; }
+    .faq-qbtn > span:nth-child(2) { font-size: 22px !important; }
+    .faq-qbtn > span:nth-child(3) { width: 36px !important; height: 36px !important; font-size: 24px !important; }
+    [id="faq"] .faq-qbtn + div > div > div { padding: 0 20px 24px 56px !important; font-size: 16px !important; }
+    [id="faq"] ul[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+  }
+
+  /* ───────── Small phone (≤480px) ───────── */
+  @media (max-width: 480px) {
+    section h2 { font-size: 38px !important; }
+    .hero-grid p { font-size: 15px !important; margin-bottom: 20px !important; }
+    [id="home"] { padding: 0 !important; }
+    .hero-grid > div:first-of-type > div:nth-of-type(2) { flex-direction: column !important; }
+    .hero-grid > div:first-of-type > div:nth-of-type(2) button { width: 100% !important; }
+    .hero-grid > div:first-of-type > div:last-child span:first-child { font-size: 26px !important; }
+    .hero-grid > div:last-child img:first-of-type { max-height: 48vh !important; }
+
+    /* Section vertical padding */
+    section { padding-top: 56px !important; padding-bottom: 56px !important; }
+
+    /* Tier card */
+    .tier-grid > button { padding: 20px !important; }
+    .tier-grid > button > div:nth-child(2) { font-size: 36px !important; }
+
+    /* Marquee speed/size */
+    [style*="сostr-marquee"] span { font-size: 22px !important; }
+
+    /* Footer bottom row */
+    footer > div:last-child { padding: 16px 20px !important; }
+  }
+</style>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="components/Header.jsx"></script>
+<script type="text/babel" src="components/Hero.jsx"></script>
+<script type="text/babel" src="components/Marquee.jsx"></script>
+<script type="text/babel" src="components/Animals.jsx"></script>
+<script type="text/babel" src="components/Donate.jsx"></script>
+<script type="text/babel" src="components/DonateModal.jsx"></script>
+<script type="text/babel" src="components/HowToHelp.jsx"></script>
+<script type="text/babel" src="components/Stories.jsx"></script>
+<script type="text/babel" src="components/ShelterLife.jsx"></script>
+<script type="text/babel" src="components/FAQ.jsx"></script>
+<script type="text/babel" src="components/NewsletterFooter.jsx"></script>
+<script type="text/babel" src="components/AnimalModal.jsx"></script>
+<script type="text/babel" src="components/MatchingForm.jsx"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+
+const App = () => {
+  const [page, setPage] = React.useState('home');
+  const [modalAnimal, setModalAnimal] = React.useState(null);
+  const [matchingOpen, setMatchingOpen] = React.useState(false);
+
+  const onNav = (id) => {
+    setPage(id);
+    const map = {
+      home: 'home',
+      animals: 'animals',
+      help: 'help',
+      stories: 'stories',
+      life: 'shelter-life',
+      about: 'about',
+    };
+    const target = document.getElementById(map[id] || id);
+    if (target) {
+      window.scrollTo({ top: target.offsetTop - 76, behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <div>
+      <Header activePage={page} onNav={onNav} />
+      <Hero
+        onAdopt={() => onNav('animals')}
+        onHelp={() => onNav('help')}
+      />
+      <Marquee />
+      <AnimalsSection onSelectAnimal={setModalAnimal} onOpenMatching={() => setMatchingOpen(true)} />
+      <DonateSection />
+      <HowToHelp />
+      <ShelterLife />
+      <Stories />
+      <FAQ />
+      <NewsletterFooter />
+      <AnimalModal animal={modalAnimal} onClose={() => setModalAnimal(null)} />
+      <MatchingForm open={matchingOpen} onClose={() => setMatchingOpen(false)} />
+    </div>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+</script>
+</body>
+</html>

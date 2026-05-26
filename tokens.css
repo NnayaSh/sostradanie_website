@@ -1,0 +1,238 @@
+/* ============================================================
+   СОСТРАДАНИЕ — Design Tokens
+   Colors, Typography, Spacing, Shadows
+   ============================================================ */
+
+/* ── Fonts ─────────────────────────────────────────────────── */
+@font-face {
+  font-family: 'JonovaCondensed';
+  src: url('./fonts/JonovaCondensed-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Patefon';
+  src: url('./fonts/Patefon-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ── Color Palette ──────────────────────────────────────────── */
+:root {
+
+  /* Primary — Orange-Red (brand hero) */
+  --color-red-50:  #fff2ee;
+  --color-red-100: #ffd4c7;
+  --color-red-200: #ffae99;
+  --color-red-300: #ff7a5e;
+  --color-red-400: #ff4a28;
+  --color-red-500: #ff2a00;   /* brand primary */
+  --color-red-600: #d91f00;
+  --color-red-700: #a81500;
+  --color-red-800: #6e0d00;
+  --color-red-900: #3a0500;
+
+  /* Sky — Brand blues (added per palette spec) */
+  --color-sky-200: #B6D1F2;
+  --color-sky-300: #A1B6C2;
+  --color-sky-400: #7194C5;
+
+  /* Cool — Blue-Grey (accent, shadows, underbellies) */
+  --color-cool-50:  #f0f4f8;
+  --color-cool-100: #d9e5ef;
+  --color-cool-200: #b8cfe0;
+  --color-cool-300: #93b5cf;
+  --color-cool-400: #6e99bc;   /* illustration cool accent */
+  --color-cool-500: #4e7fa6;
+  --color-cool-600: #3a6285;
+  --color-cool-700: #284760;
+  --color-cool-800: #182e40;
+  --color-cool-900: #0a1820;
+
+  /* Neutral — Warm off-whites and darks */
+  --color-neutral-0:   #ffffff;
+  --color-neutral-50:  #fdf8f5;
+  --color-neutral-100: #f5ede8;
+  --color-neutral-200: #e8ddd6;
+  --color-neutral-300: #cfc2b8;
+  --color-neutral-400: #a89087;
+  --color-neutral-500: #7d6259;
+  --color-neutral-600: #5c4038;
+  --color-neutral-700: #3e2720;
+  --color-neutral-800: #261510;
+  --color-neutral-900: #120804;
+
+  /* ── Semantic Aliases ─────────────────────────────────────── */
+
+  /* Backgrounds */
+  --bg-page:        var(--color-neutral-0);
+  --bg-warm:        var(--color-neutral-50);
+  --bg-brand:       var(--color-red-500);
+  --bg-brand-deep:  var(--color-red-700);
+  --bg-cool:        var(--color-cool-100);
+
+  /* Foreground / Text */
+  --fg-1:        var(--color-neutral-900);   /* primary text */
+  --fg-2:        var(--color-neutral-700);   /* secondary text */
+  --fg-3:        var(--color-neutral-500);   /* muted / captions */
+  --fg-on-brand: var(--color-neutral-0);     /* text on red bg */
+  --fg-brand:    var(--color-red-500);       /* brand text on light */
+
+  /* Interactive */
+  --interactive-primary:         var(--color-red-500);
+  --interactive-primary-hover:   var(--color-red-600);
+  --interactive-primary-press:   var(--color-red-700);
+  --interactive-secondary:       var(--color-cool-400);
+  --interactive-secondary-hover: var(--color-cool-500);
+
+  /* Border */
+  --border-light:  var(--color-neutral-200);
+  --border-medium: var(--color-neutral-300);
+  --border-brand:  var(--color-red-500);
+
+  /* ── Typography ───────────────────────────────────────────── */
+
+  /* Font families */
+  --font-display: 'JonovaCondensed', 'Arial Narrow', sans-serif; /* headlines, logo, CTA */
+  --font-body:    'Patefon', Georgia, serif;                      /* body, UI labels */
+  --font-mono:    'Courier New', monospace;                       /* code only */
+
+  /* Font sizes */
+  --text-xs:   12px;
+  --text-sm:   14px;
+  --text-base: 16px;
+  --text-md:   18px;
+  --text-lg:   22px;
+  --text-xl:   28px;
+  --text-2xl:  36px;
+  --text-3xl:  48px;
+  --text-4xl:  64px;
+  --text-5xl:  88px;
+
+  /* Line heights */
+  --leading-tight:  1.05;
+  --leading-snug:   1.2;
+  --leading-normal: 1.5;
+  --leading-loose:  1.75;
+
+  /* Letter spacing */
+  --tracking-tighter: -0.02em;
+  --tracking-tight:   -0.01em;
+  --tracking-normal:   0em;
+  --tracking-wide:     0.04em;
+  --tracking-wider:    0.08em;
+
+  /* ── Spacing ──────────────────────────────────────────────── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* ── Border Radius ────────────────────────────────────────── */
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-xl:   32px;
+  --radius-pill: 999px;
+  --radius-none: 0px;
+
+  /* ── Shadows ──────────────────────────────────────────────── */
+  --shadow-sm:    0 1px 4px 0 rgba(255,42,0,0.10);
+  --shadow-md:    0 4px 16px 0 rgba(255,42,0,0.14);
+  --shadow-lg:    0 8px 32px 0 rgba(255,42,0,0.18);
+  --shadow-card:  0 2px 12px 0 rgba(38,21,16,0.10);
+  --shadow-cool:  0 4px 20px 0 rgba(78,127,166,0.18);
+
+}
+
+/* ── Semantic Type Styles ───────────────────────────────────── */
+
+h1, .h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tighter);
+  color: var(--fg-1);
+}
+
+h2, .h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tighter);
+  color: var(--fg-1);
+}
+
+h3, .h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-1);
+}
+
+h4, .h4 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  line-height: var(--leading-snug);
+  color: var(--fg-1);
+}
+
+h5, .h5 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  line-height: var(--leading-snug);
+  color: var(--fg-1);
+}
+
+p, .body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--fg-2);
+}
+
+.body-lg {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  line-height: var(--leading-normal);
+  color: var(--fg-2);
+}
+
+.body-sm {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  color: var(--fg-3);
+}
+
+.caption {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+  color: var(--fg-3);
+  letter-spacing: var(--tracking-wide);
+}
+
+.label {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
