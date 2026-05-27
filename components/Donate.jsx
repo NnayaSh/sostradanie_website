@@ -19,7 +19,7 @@ const TIERS = [
     title: 'Полный осмотр',
     impact: 'Прививка и приём у ветеринара',
     detail: 'Базовый комплекс прививок. Питомец становится здоров и готов к переезду в новый дом.',
-    illo: 'cat-running',
+    illo: 'cat-vet',
   },
   {
     id: 5000,
@@ -33,7 +33,7 @@ const TIERS = [
 const ILLOS = {
   'cat-loaf':     'assets/cat-loaf.png',
   'dog-resting':  'assets/dog-resting.png',
-  'cat-running':  'assets/cat-running.png',
+  'cat-vet':  'assets/cat-vet.png',
   'horse-running': 'assets/horse-running.png',
 };
 
