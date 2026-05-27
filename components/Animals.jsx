@@ -57,7 +57,7 @@ const AnimalsSection = ({ onSelectAnimal, onOpenMatching }) => {
           <img src="assets/photos/plyusha.jpg" alt="" style={{ ...asStyles.bottomImg, objectFit: "contain" }} />
           <div>
             <div style={asStyles.bottomHeading}>Не нашли своего?</div>
-            <div style={asStyles.bottomBody}>В приюте сейчас 86 питомцев. Заполните анкету — мы подберём друга по характеру.</div>
+            <div style={asStyles.bottomBody}>В приюте сейчас 250 питомцев. Заполните анкету — мы подберём друга по характеру.</div>
           </div>
           <button style={asStyles.bottomBtn} onClick={onOpenMatching}>Анкета на знакомство →</button>
         </div>
