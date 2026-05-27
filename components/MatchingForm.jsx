@@ -14,7 +14,7 @@ const TYPE_OPTIONS = [
 const QUESTIONS = [
   { id: 'types', phase: 'who',
     title: 'Кто вам по душе?',
-    hint: 'Можно выбрать обоих — или нажать «пока не знаю», и мы подскажем.',
+    hint: 'Можно выбрать обоих — или нажать «пока не знаю», и&nbsp;мы подскажем.',
     kind: 'cards', multi: true, options: TYPE_OPTIONS, required: true },
   { id: 'size', phase: 'who',
     title: 'Какого размера собака вам подходит?',
@@ -23,7 +23,7 @@ const QUESTIONS = [
     showIf: (a) => (a.types || []).includes('dog') },
   { id: 'age', phase: 'who',
     title: 'А какой возраст?',
-    hint: 'Малыши требуют больше времени, возрастные — меньше движения и больше любви.',
+    hint: 'Малыши требуют больше времени, возрастные — меньше движения и&nbsp;больше любви.',
     kind: 'chips', options: ['Малыш', 'Молодой', 'Взрослый', 'Возрастной', 'Любой'] },
   { id: 'temper', phase: 'who',
     title: 'Какой характер вам ближе?',
