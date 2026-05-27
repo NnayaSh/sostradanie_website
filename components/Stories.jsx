@@ -114,6 +114,7 @@ const stStyles = {
     color: '#261510',
     lineHeight: 0.96,
     letterSpacing: '-0.02em'
+    marginBottom: 20
   },
   dots: { display: 'flex', gap: 8, alignItems: 'center', position: 'relative', zIndex: 5 },
   dot: {
