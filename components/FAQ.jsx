@@ -28,7 +28,7 @@ const faqStyles = {
     color: '#261510',
     lineHeight: 0.92,
     letterSpacing: '-0.02em',
-    margin: '0 0 22px 0'
+    margin: '60px 0 22px 0'
   },
   lede: {
     fontFamily: "'Patefon',Georgia,serif",
