@@ -301,6 +301,7 @@ const slStyles = {
     lineHeight: 0.96,
     letterSpacing: '-0.02em',
     marginBottom: 16,
+    marginTop: 60,
   },
   lede: {
     fontFamily: "'Patefon',Georgia,serif",
