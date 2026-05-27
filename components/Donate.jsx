@@ -33,7 +33,7 @@ const TIERS = [
 const ILLOS = {
   'cat-loaf':     'assets/cat-loaf.png',
   'dog-resting':  'assets/dog-resting.png',
-  'cat-vet':  'assets/cat-vet.png',
+  'cat-vet':  'assets/cat_vet.png',
   'horse-running': 'assets/horse-running.png',
 };
 
