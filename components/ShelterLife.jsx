@@ -300,7 +300,6 @@ const slStyles = {
     color: '#261510',
     lineHeight: 0.96,
     letterSpacing: '-0.02em',
-    margin: 0,
     marginBottom: 16,
   },
   lede: {
